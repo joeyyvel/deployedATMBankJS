@@ -1,0 +1,476 @@
+:root {
+  --myBorderColor: black;
+  --experimentColor: #1f0b92;
+  --myScreen: #aabdd6;
+  --myInputColor: #dfd2d2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #cfaeae;
+  background-color: #6b7480;
+  height: 100vh;
+  padding: 2rem;
+}
+
+nav {
+  background-color: rgb(67, 67, 221);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+  margin-left: 4px;
+
+  padding: 0 6rem;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logo {
+  height: 5rem;
+}
+
+.welcome {
+  font-size: 2rem;
+  color: white;
+}
+
+.login {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+}
+
+.login__input {
+  height: 4rem;
+  width: 10rem;
+  border-radius: 20px;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 2rem;
+  border: none;
+}
+
+.login__btn {
+  height: 4rem;
+  width: 6rem;
+}
+
+/*--------drop down button---------*/
+.dropbtn {
+  background-color: #04aa6d;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  z-index: 100;
+  transition: all 2s;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 30;
+  border-radius: 2px;
+  font-size: 1.3rem;
+}
+
+.dropdown-content p {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  border-bottom: 1px solid rgb(196, 184, 184);
+  border-radius: 3px;
+}
+
+.dropdown-content p:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  visibility: hidden;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+/*-----------body visibility for client-------*/
+.main__app {
+  /*-- visibility: hidden; --*/
+  transition: all 2s;
+}
+
+/*-------------screen-----------*/
+
+.bigScreen {
+  background-color: var(--myScreen);
+  height: 45rem;
+  width: 100%;
+  border: 5px solid black;
+  text-align: center;
+  margin: 5px;
+  position: relative;
+}
+
+#screenLog {
+  padding-top: 50px;
+  line-height: 6.5rem;
+}
+
+#screenLog:hover {
+  color: #049c1d;
+  font-size: 65px;
+  line-height: 10rem;
+  padding-top: 50px;
+  transition: 2s;
+}
+
+/*-------------inside big screen----------*/
+.output {
+  height: 100%;
+  width: auto;
+  background-color: silver;
+  text-align: center;
+  line-height: 3;
+  font-size: 20px;
+}
+/*---------------balance---------------*/
+.operation--balance {
+  grid-column: 1 / span 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.balance__label {
+  font-size: 3.4rem;
+  font-weight: bolder;
+  margin-bottom: -0.8rem;
+  color: rgb(20, 16, 29);
+}
+
+.balance__date {
+  font-size: 1.9rem;
+  color: black;
+  margin-top: 10px;
+}
+
+.balance__value {
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: rgb(88, 20, 20);
+  background-color: var(--myInputColor);
+  width: 450px;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  margin-top: 15px;
+}
+
+.form__input {
+  font-size: 2rem;
+  width: 15em;
+  padding: 10px;
+  background-color: greenyellow;
+  border: none;
+}
+
+#inputData,
+#inputData__transfer,
+#inputData__loan,
+#inputData__withdrawal,
+#inputData__pin,
+#inputData__newPin {
+  background-color: var(--myInputColor);
+  height: 70px;
+  margin: 5px;
+  border-radius: 30px;
+  text-align: center;
+}
+
+/*-----------mini history--------*/
+.miniHistory {
+  grid-row: 2 / span 3;
+  background-color: #fff;
+  border-radius: 1rem;
+  overflow: scroll;
+  height: 381px;
+}
+
+.miniHistory__row {
+  padding: 2.25rem 4rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.miniHistory__type {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #fff;
+  padding: 0.2rem 2rem;
+  border-radius: 10rem;
+  margin-right: 2rem;
+}
+
+.miniHistory__date {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #666;
+}
+
+.miniHistory__type--deposit {
+  background-image: linear-gradient(to top left, #39b385, #9be15d);
+}
+
+.miniHistory__type--withdrawal {
+  background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+}
+
+.miniHistory__value {
+  font-size: 1.7rem;
+  margin-left: auto;
+}
+
+/*-----------Body panel---------*/
+
+.app {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  text-transform: uppercase;
+  color: white;
+  text-shadow: 3px 2px 10px black, 0 0 40px blue, 0 0 50px darkblue;
+}
+/*-------------label section--------*/
+.label__app {
+  border: 5px rgb(136, 120, 120);
+  width: 100%;
+  font-size: 2.5rem;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+/*----------left panel btn----------*/
+.label__left {
+  border: 1px solid var(--myBorderColor);
+  height: 6rem;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 10px;
+}
+/*----------right panel btn----------*/
+.label__right {
+  border: 1px solid var(--myBorderColor);
+  height: 6rem;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+.label__left:hover {
+  background-color: rgb(160, 181, 190);
+}
+
+.label__right:hover {
+  background-color: rgb(160, 181, 190);
+}
+
+.leftPanel,
+.rightPanel {
+  pointer-events: none;
+}
+
+.choosePara {
+  font-size: 3.5em;
+  color: black;
+}
+
+/*-----------mini history transaction---------*/
+.miniHistory {
+  position: absolute;
+  font-size: 20px;
+  color: rgb(22, 133, 59);
+  z-index: 20;
+  top: 0px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  visibility: hidden;
+}
+
+/*------------Summary details-----------*/
+.summary {
+  position: relative;
+  border: 3px solid rgb(218, 241, 12);
+  width: 100%;
+  z-index: 40;
+  display: flex;
+  font-size: 20px;
+  align-items: center;
+  text-align: center;
+  justify-content: space-evenly;
+  height: 60px;
+  margin-top: 68px;
+  color: black;
+  background-color: antiquewhite;
+}
+
+/*--------Operation Body--------*/
+.operation {
+  background-color: rgb(53, 125, 173);
+  position: relative;
+  margin-top: -396px;
+  z-index: 30;
+  padding: 20px;
+  border: 4px solid rgb(13, 177, 34);
+  height: 347px;
+}
+
+/*-------Operation Welcome-------*/
+.operation--welcome {
+  position: relative;
+  z-index: 1;
+  top: -20px;
+  border: 3px solid black;
+  border-radius: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+  visibility: hidden;
+  background-color: #6e84a5;
+}
+
+/*--- OPERATION: CASH WITHDRAWAL ---*/
+.operation--withdrawal {
+  visibility: hidden;
+  z-index: 2;
+  position: relative;
+  height: 377px;
+  top: 3px;
+}
+
+/*---- OPERATION: LOAN ----*/
+.operation--loan {
+  visibility: hidden;
+  position: relative;
+  z-index: 3;
+  height: 375px;
+  top: 22px;
+}
+
+/*---- OPERATION: TRANSFERS ----*/
+.operation--transfer {
+  visibility: hidden;
+  position: relative;
+  z-index: 4;
+  top: 43px;
+  height: 378px;
+  visibility: hidden;
+}
+
+/*-----OPERATION: BALANCE -----*/
+.operation--balance {
+  visibility: hidden;
+  position: relative;
+  z-index: 8;
+  top: 64px;
+  font-size: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  align-items: center;
+  height: 370px;
+  visibility: hidden;
+}
+
+/*---- OPERATION: CLOSE ----*/
+.operation--pin {
+  visibility: hidden;
+  top: 68px;
+  position: relative;
+  z-index: 6;
+  height: 378px;
+}
+
+/*------input btn and label------*/
+.form__input {
+  font-size: 30px;
+  color: rgb(99, 161, 4);
+  font-weight: bolder;
+}
+
+.form__btn {
+  height: 60px;
+  width: 70px;
+  border: none;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.form__label {
+  font-size: 20px;
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+  font-size: 3.7rem;
+  font-weight: 900;
+  color: black;
+}
+
+.logout-timer {
+  font-size: 1.5em;
+  color: black;
+  text-align: center;
+  font-weight: bold;
+}
+
+/*------------------practice button--------------*/
+
+#btn2 {
+  font-size: 2.5rem;
+  border: 3px solid green;
+}

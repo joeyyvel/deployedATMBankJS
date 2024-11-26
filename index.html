@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap"
+    />    
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+       
+    <title>Global Bank || Sample</title>
+  <body>
+    <!--TOP NAVIGATION-->
+    <nav>
+      <p class="welcome">Log-In to get started</p>
+      <img src="/image/GlobeBank.png" alt="logo" class="logo" />
+      <form class="login">
+        <!--User Name LOGIN-->
+        <input
+          type="text"
+          placeholder="user"
+          class="login__input login__input--user"
+        />
+        <!--User Password-->
+        <input
+          type="text"
+          placeholder="PIN"
+          class="login__input login__input--pin"
+        />
+        <button class="login__btn">&rarr;</button>
+        
+        <div class="dropdown">
+          <div class="dropbtn">Menu</div>
+          <div class="dropdown-content">
+            <p  id="withdrawOne" class="cash__withdrawal">Withdraw</p>
+            <p  id="loanOne" class="request__loan">Loan</p>
+            <p  id="historyOne" class="mini__history__transaction">History</p>
+            <p  id="transferOne" class="transfer">Transfer</p>
+            <p  id="balanceOne" class="balance__inquiry">Balance</p>
+            <p  id="pinOne" class="change__pin">Pin# Change</p>
+          </div>
+        </div>        
+      </form>     
+    </nav>
+
+<div class="main__app">
+    <div class="bigScreen">
+        <div class="output">
+          <h1 id="screenLog">Please Login <br> To Start Transactions</h1>
+        </div>
+
+      <!-- Welcome Screen -->
+      <div class="operation operation--welcome">
+        <div>
+          <p class="balance__label">Welcome to Global bank</p>
+          <p class="balance__date">
+            As of <span class=" date">05/03/2037</span>
+          </p>
+        </div>
+        <p class="choosePara">Please choose services below</p>
+      </div>
+
+       <!-- OPERATION: CASH WITHDRAWAL -->
+     <div class="operation operation--withdrawal">
+      <h2>Withdraw Money</h2>
+      <form class="form form--withdraw">
+        <input type="text"  class="form__input form__input--withdraw-amount"
+         placeholder="insert amount to withdraw:" id="inputData__withdrawal" autocomplete="off"  />
+        <button class="form__btn form__btn--withdraw" onclick="withDrawFunction()">&rarr;</button>
+        <label class="form__label form__label--withdraw">Confirm</label>
+      </form>
+    </div>
+
+    <!-- OPERATION: LOAN -->
+    <div class="operation operation--loan">
+      <h2>Request Loan</h2>
+      <form class="form form--loan">
+        <input type="number"  placeholder="Amount" class="form__input form__input--loan-amount" 
+         id="inputData__loan" autocomplete="off" />
+        <button class="form__btn form__btn--loan" onclick="loanFunction()">&rarr;</button>
+        <label class="form__label form__label--loan">Confirm</label>
+      </form>
+    </div>
+
+    
+    <!----- MINI HISTORY ----->
+  <div class="miniHistory">
+
+    <div class="miniHistory__row">
+      <div class="miniHistory__type miniHistory__type--deposit">2 Deposits</div>
+      <div class="miniHistory__date">3 days ago</div>
+      <div class="miniHistory__value">4 000 &#8369 </div>
+    </div>
+
+    <div class="miniHistory__row">
+      <div class="miniHistory__type miniHistory__type--withdrawal">1 Withdrawal</div>
+      <div class="miniHistory__date">3 days ago</div>
+      <div class="miniHistory__value">4 000 &#8369 </div>
+    </div>
+  </div>
+    
+      <!-- OPERATION: TRANSFERS -->
+    <div class="operation operation--transfer">
+      <h2>Transfer Money</h2>
+      <div class="form form--transfer">
+      
+        <input type="text" placeholder="Enter account to transfer here:" 
+         class="form__input form__input--to" id="inputData__transfer" />
+       
+         <input type="text" placeholder="Enter amount here:"
+         class="form__input form__input--amount"  id="inputData" />
+ 
+         <button class="form__btn form__btn--transfer" onclick="transferFunction()">&rarr;</button>
+        
+      </div>
+    </div>
+
+      <!-- BALANCE -->
+      <div class="operation operation--balance">
+        <div>
+          <p class="balance__label">Current Balance</p>
+          <p class="balance__date">
+            As of <span class="dateBalance">Change me</span>
+          </p>
+        </div>
+        <p class="balance__value">&#8369</p>
+      </div>
+
+       <!-- OPERATION: PIN -->
+     <div class="operation operation--pin">
+      <h2>PIN Change</h2>
+      <form class="form form--close">
+        <input type="text" class="form__input form__input--user" 
+               placeholder="Enter your current PIN:"  id="inputData__pin" />       
+        <input
+          type="password"
+          maxlength="6"
+          placeholder="Enter new PIN:"
+          class="form__input form__input--pin"
+          id="inputData__newPin"
+        />
+        <button class="form__btn form__btn--close" onclick="changePin()">&rarr;</button>       
+        <label class="form__label">Confirm </label>
+      </form>
+    </div>
+
+    <!--SUMMARY-->
+    <div class="summary">
+       <p class="summary__label">Income</p>
+       <p class="summary__value summary__value--in">&#8369 0000 </p>
+       <p class="summary__label">Withdrawal</p> 
+       <p class="summary__value summary__value--out">&#8369 0000 </p>
+       <p class="summary__label">(%) Interest</p>
+       <p class="summary__value summary__value--interet">&#8369 0000 </p>
+       <button class="btn--sort">&downarrow; SORT</button>
+    </div>
+
+      
+  </div>
+
+<main class="app">
+
+<div class="label__app leftPanel">
+  <div class="label__left cash__withdrawal" id="withdrawTwo">Cash Withdrawal</div>
+  <div class="label__left request__loan" id="loanTwo">Request Loan</div>
+  <div class="label__left mini__history__transaction" id="historyTwo">Mini History</div>
+</div>  
+
+<div class="label__app rightPanel">
+  <div class="label__right transfer" id="transferTwo">Transfer</div>
+  <div class="label__right balance__inquiry" id="balanceTwo">Balance Inquiry</div>
+  <div class="label__right change__pin" id="pinTwo">Pin Change</div>
+  
+</div>
+
+</div>  
+
+<!--LOGOUT TIMER-->
+<p class="logout-timer">
+  you will be logged out in <span class="timer">05:00</span>
+</p>
+</main>
+
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
